@@ -12,3 +12,5 @@ Brainfuck interpreter/translator to C
     -c to spit out C code as File.c
     
     
+## EOF
+Eof from stdin translates to 0 in data pointer.
