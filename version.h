@@ -17,7 +17,7 @@
 namespace version
 {
     constexpr char PROGRAM_NAME[] = "Brainfuck";
-    constexpr char PROGRAM_VERSION[] = "0.5.6";
+    constexpr char PROGRAM_VERSION[] = "0.6.0";
 
     std::string version_info()
     {

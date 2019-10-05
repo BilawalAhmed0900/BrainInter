@@ -12,10 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8269e69d-91df-4ac0-ba35-420976418806" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Brainfuck_Interpreter.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Brainfuck_Interpreter.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interpreter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/interpreter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interpreter.h" beforeDir="false" afterPath="$PROJECT_DIR$/interpreter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/version.h" beforeDir="false" afterPath="$PROJECT_DIR$/version.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1570253584126</updated>
       <workItem from="1570253585282" duration="8065000" />
-      <workItem from="1570269197510" duration="16643000" />
+      <workItem from="1570269197510" duration="16757000" />
     </task>
     <servers />
   </component>
@@ -89,11 +86,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/interpreter.cpp</url>
-          <line>149</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/interpreter.cpp</url>
           <line>223</line>
