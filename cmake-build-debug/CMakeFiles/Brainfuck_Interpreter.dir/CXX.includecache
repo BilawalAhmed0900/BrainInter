@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Mian Bilawal/CLionProjects/Brainfuck_Interpreter/interpreter.h
+fstream
+-
+memory
+-
+sstream
+-
+cstring
+-
+cstddef
+-
+
+C:/Users/Mian Bilawal/CLionProjects/Brainfuck_Interpreter/main.cpp
+iostream
+-
+string
+-
+vector
+-
+interpreter.h
+C:/Users/Mian Bilawal/CLionProjects/Brainfuck_Interpreter/interpreter.h
+version.h
+C:/Users/Mian Bilawal/CLionProjects/Brainfuck_Interpreter/version.h
+
+C:/Users/Mian Bilawal/CLionProjects/Brainfuck_Interpreter/version.h
+climits
+-
+string
+-
+sstream
+-
+
