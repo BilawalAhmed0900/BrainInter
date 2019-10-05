@@ -277,7 +277,5 @@ void interpreter::parse_all(const std::string& str)
     /*
      * Considering full statement a loop too
      */
-
-    std::cout << remove_comments(str) << "\n";
     loop_enter(remove_comments(str));
 }
