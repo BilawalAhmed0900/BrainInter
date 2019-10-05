@@ -13,7 +13,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8269e69d-91df-4ac0-ba35-420976418806" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Brainfuck_Interpreter.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Brainfuck_Interpreter.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interpreter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/interpreter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interpreter.h" beforeDir="false" afterPath="$PROJECT_DIR$/interpreter.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +51,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Brainfuck_Interpreter" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Brainfuck_Interpreter" TARGET_NAME="Brainfuck_Interpreter" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Brainfuck_Interpreter" RUN_TARGET_NAME="Brainfuck_Interpreter">
+    <configuration name="Brainfuck_Interpreter" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="&quot;New Text Document.txt&quot; -c" WORKING_DIR="file://$PROJECT_DIR$/cmake-build-debug" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Brainfuck_Interpreter" TARGET_NAME="Brainfuck_Interpreter" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Brainfuck_Interpreter" RUN_TARGET_NAME="Brainfuck_Interpreter">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -66,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1570253584126</updated>
       <workItem from="1570253585282" duration="8065000" />
-      <workItem from="1570269197510" duration="13107000" />
+      <workItem from="1570269197510" duration="16643000" />
     </task>
     <servers />
   </component>
@@ -83,5 +85,26 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/interpreter.cpp</url>
+          <line>149</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/interpreter.cpp</url>
+          <line>223</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>94</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

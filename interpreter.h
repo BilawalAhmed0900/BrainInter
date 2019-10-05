@@ -26,7 +26,7 @@ class interpreter
     int32_t current_position;
 
     void loop_enter(const std::string&);
-    void parse_one(const char&);
+    size_t parse_one_future(const std::string&, size_t, const char&);
 
     std::string BASIC_C_FILE_STRUCTURE()
     {
@@ -58,8 +58,7 @@ public:
 
     void parse_all(const std::string&);
     void clear_data_ptr() { memset(&data_ptr[0], 0, length_data_ptr * sizeof(data_type)); }
-    std::string get_if_output() { if (output_mode) { return output.str() + " free(data); return 0;}"; } return ""; }
-    size_t parse_one_future(const std::string&, size_t, const char&);
+    std::string get_if_output() { if (output_mode) { return output.str() + "free(data);return 0;}"; } return ""; }
 };
 
 

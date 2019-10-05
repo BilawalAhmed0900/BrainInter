@@ -35,73 +35,6 @@ size_t find_loop_end(const std::string& str, size_t loop_level)
     return -1;
 }
 
-void interpreter::parse_one(const char& c)
-{
-    switch (c)
-    {
-        case '>':
-            OUTPUT_MODE_CHECK(
-                    output << "data = (char *)((size_t)(data + 1) % len);";
-                    )
-            current_position++;
-            break;
-
-        case '<':
-            OUTPUT_MODE_CHECK(
-                    output << "data = wrap_min(data - 1, ptr_min, ptr_max);";
-            )
-            current_position--;
-            if (current_position < 0)
-            {
-                current_position = length_data_ptr - abs(current_position);
-            }
-            break;
-
-        case '+':
-            OUTPUT_MODE_CHECK(
-                    output << "++*data;";
-            )
-            this->data_ptr[current_position]++;
-            if (current_position >= length_data_ptr)
-            {
-                current_position = 0;
-            }
-            break;
-
-        case '-':
-            OUTPUT_MODE_CHECK(
-                    output << "--*data;";
-            )
-            this->data_ptr[current_position]--;
-            break;
-
-        case '.':
-            OUTPUT_MODE_CHECK(
-                    output << "putchar(*data);"
-            )
-
-            if (!output_mode)
-                std::cout << this->data_ptr[current_position];
-            break;
-
-        case ',':
-            OUTPUT_MODE_CHECK(
-                    output << "*data = getchar();"
-            )
-
-            if (!output_mode)
-            {
-                std::cout << "Character Required: ";
-                this->data_ptr[current_position] = (char)getchar();
-            }
-
-            break;
-
-        default:
-            break;
-    }
-}
-
 size_t interpreter::parse_one_future(const std::string& str, size_t i, const char& c)
 {
     size_t how_many = 0;
@@ -113,17 +46,25 @@ size_t interpreter::parse_one_future(const std::string& str, size_t i, const cha
             OUTPUT_MODE_CHECK(
                     output << "data = (char *)((size_t)(data + " << how_many << ") % len);";
             )
-            current_position = current_position + how_many;
+
+            if (!output_mode)
+            {
+                current_position = (current_position + how_many) % length_data_ptr;
+            }
             break;
 
         case '<':
             OUTPUT_MODE_CHECK(
                     output << "data = wrap_min(data - " << how_many << ", ptr_min, ptr_max);";
             )
-            current_position = current_position - how_many;
-            if (current_position < 0)
+
+            if (!output_mode)
             {
-                current_position = length_data_ptr - abs(current_position);
+                current_position = current_position - how_many;
+                if (current_position < 0)
+                {
+                    current_position = length_data_ptr - abs(current_position);
+                }
             }
             break;
 
@@ -131,10 +72,14 @@ size_t interpreter::parse_one_future(const std::string& str, size_t i, const cha
             OUTPUT_MODE_CHECK(
                     output << "*data = *data + " << how_many << ";";
             )
-            this->data_ptr[current_position] = this->data_ptr[current_position] + how_many;
-            if (current_position >= length_data_ptr)
+
+            if (!output_mode)
             {
-                current_position = 0;
+                this->data_ptr[current_position] = this->data_ptr[current_position] + how_many;
+                if (current_position >= length_data_ptr)
+                {
+                    current_position = 0;
+                }
             }
             break;
 
@@ -142,6 +87,8 @@ size_t interpreter::parse_one_future(const std::string& str, size_t i, const cha
             OUTPUT_MODE_CHECK(
                     output << "*data = *data - " << how_many << ";";
             )
+
+            if (!output_mode)
             this->data_ptr[current_position] = this->data_ptr[current_position] - how_many;
             break;
 
@@ -169,21 +116,25 @@ size_t interpreter::parse_one_future(const std::string& str, size_t i, const cha
             if (how_many > 1)
             {
                 OUTPUT_MODE_CHECK(
-                        output << "for (size_t i = 0; i < " << how_many << "; i++) *data = getchar();"
+                        output << "for (size_t i = 0; i < " << how_many << "; i++) { int char_get = getchar(); if (char_get == EOF) char_get = 0; *data = char_get; }"
                 )
             }
             else
             {
                 OUTPUT_MODE_CHECK(
-                        output << "*data = getchar();"
+                        output << "int char_get = getchar(); if (char_get == EOF) char_get = 0; *data = char_get;"
                 )
             }
 
             if (!output_mode)
             {
-                std::cout << "Character Required: ";
                 for (size_t j = 0; j < how_many; j++)
-                    this->data_ptr[current_position] = (char)getchar();
+                {
+                    int char_get = getchar();
+                    if (char_get == EOF)
+                        char_get = 0;
+                    this->data_ptr[current_position] = (char)char_get;
+                }
             }
 
             break;
@@ -221,12 +172,9 @@ void interpreter::loop_enter(const std::string& str)
             if (output_mode)
             {
                 /*
-                 * We have to output to C only once
+                 * Output mode just need translation
                  */
-                if (this->data_ptr[current_position])
-                {
-                    this->loop_enter(loop_string);
-                }
+                this->loop_enter(loop_string);
             }
             else
             {
